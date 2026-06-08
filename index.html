@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam’s Daily Routine – Audio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #b3e0ff 0%, #f9c7e0 100%);
+            /* нежно-голубой → розовый */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        /* карточка плеера – полупрозрачный белый с сине-розовым акцентом */
+        .player-card {
+            max-width: 760px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 56px;
+            padding: 28px 30px 32px 30px;
+            box-shadow: 0 25px 45px rgba(0, 30, 50, 0.25);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 215, 235, 0.6);
+        }
+
+        /* верхняя часть : картинка + текст */
+        .hero {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .cover {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 36px;
+            box-shadow: 0 20px 30px -8px rgba(0, 80, 120, 0.3);
+            border: 3px solid #ffb3d1;
+            transition: transform 0.2s;
+        }
+
+        .cover:hover {
+            transform: scale(1.02);
+        }
+
+        .description {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(125deg, #0f5b8c, #c43b7a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .sub {
+            font-size: 1rem;
+            color: #2c5a7a;
+            font-weight: 500;
+            margin-bottom: 12px;
+            border-left: 4px solid #f28bc0;
+            padding-left: 14px;
+            background: #eef4fc80;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .badge {
+            background: #cfe6ff;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #0e6b9e;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+
+        /* аудио плеер – кастомизация под сине-розовый */
+        audio {
+            width: 100%;
+            margin: 20px 0 10px 0;
+            border-radius: 48px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: #d9ecff;
+        }
+
+        audio::-webkit-media-controls-play-button {
+            background-color: #f49bc1;
+            border-radius: 50%;
+        }
+
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: #1f6392;
+            font-weight: 500;
+        }
+
+        audio::-webkit-media-controls-volume-slider {
+            background-color: #7ab3cc;
+        }
+
+        /* секция с транскрипцией / дополнительным текстом (по желанию) */
+        .info-note {
+            margin-top: 25px;
+            background: #e9f2fa;
+            padding: 18px 22px;
+            border-radius: 32px;
+            border-left: 6px solid #ff99c2;
+            font-size: 0.95rem;
+            color: #145c86;
+        }
+
+        .info-note strong {
+            color: #c63578;
+            font-weight: 600;
+        }
+
+        hr {
+            margin: 12px 0 8px;
+            border: 1px solid #ffc2db;
+        }
+
+        @media (max-width: 560px) {
+            .player-card {
+                padding: 20px;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .sub {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="player-card">
+    <div class="badge">🎧 LISTEN & LEARN</div>
+    <div class="hero">
+        <!-- картинка 11.jpg (сине-розовое настроение) -->
+        <img class="cover" src="11.jpg" alt="Sam's daily routine">
+        <div class="description">
+            <h1>🗣️ Sam's typical day</h1>
+            <div class="sub">
+                ⏰ Morning routine · Work & study · Evening rest
+            </div>
+        </div>
+    </div>
+
+    <!-- аудиодорожка: A2_Student_s_Book_track11.mp3 -->
+    <audio controls>
+        <source src="A2_Student_s_Book_track11.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="info-note">
+        <strong>📘 About the audio</strong><br>
+        Sam, an A2-level student, shares his typical weekday. 
+        From waking up early ☀️, having breakfast, going to college,
+        studying with friends, to relaxing in the evening. 
+        <hr>
+        🎤 <strong>Listen carefully</strong> – notice the present simple and time expressions.
+    </div>
+</div>
+</body>
+</html>
